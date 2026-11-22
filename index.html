@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexora: Freight, Warehousing and Tracking</title>
+<meta name="description" content="Nexora moves business forward: sea, air and road freight, warehouse sorting, customs support and live tracking of every container from booking to the door.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600;1,700&family=Playfair+Display:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='4' y='4' width='9' height='24' rx='2' transform='skewX(-12)' fill='%23ffffff'/%3E%3Crect x='18' y='4' width='9' height='24' rx='2' transform='skewX(-12)' fill='%2329a8f0'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<!-- Preloader -->
+<div class="preloader" id="preloader" role="presentation">
+  <span class="logo-mark big" aria-hidden="true"><i></i><i></i></span>
+</div>
+
+<!-- Header -->
+<header class="site-header" id="siteHeader" data-theme="dark">
+  <a class="logo" href="#top" data-scroll aria-label="Nexora, back to top">
+    <span class="logo-mark" aria-hidden="true"><i></i><i></i></span>
+    <span class="logo-word">NEXORA</span>
+  </a>
+  <nav class="main-nav" aria-label="Main">
+    <span class="nav-fill" id="navFill" aria-hidden="true"></span>
+    <a href="#about" data-scroll data-spy="about" class="nav-link">About us</a>
+    <a href="#services" data-scroll data-spy="services" class="nav-link">Our services</a>
+    <a href="#fleet" data-scroll data-spy="fleet" class="nav-link">Fleet</a>
+    <a href="#industries" data-scroll data-spy="industries" class="nav-link">Industries</a>
+  </nav>
+  <div class="header-actions">
+    <a class="btn-track" href="#tracking" data-scroll>
+      Track shipment
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z" fill="currentColor"/></svg>
+    </a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu" hidden>
+  <nav aria-label="Mobile">
+    <a href="#about" data-scroll>About us</a>
+    <a href="#services" data-scroll>Our services</a>
+    <a href="#fleet" data-scroll>Fleet</a>
+    <a href="#industries" data-scroll>Industries</a>
+    <a href="#tracking" data-scroll>Track shipment</a>
+    <button class="btn btn-blue" data-quote> Get a quote </button>
+  </nav>
+</div>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero" data-header="dark">
+    <div class="hero-media">
+      <img src="img/hero-port.webp" alt="A gantry crane lifting a blue Nexora container over a container yard" fetchpriority="high">
+      <div class="hero-shade" aria-hidden="true"></div>
+    </div>
+    <div class="hero-inner">
+      <div class="hero-top reveal">
+        <h1>Moving business forward.<br>One <em>delivery</em> at a time.</h1>
+        <div class="partners">
+          <div class="avatar-stack" aria-hidden="true">
+            <span class="avatar" style="--pos:0%"></span>
+            <span class="avatar" style="--pos:33.333%"></span>
+            <span class="avatar" style="--pos:66.666%"></span>
+            <span class="avatar" style="--pos:100%"></span>
+          </div>
+          <p class="partners-text"><strong>+450</strong><span>Business partners</span></p>
+        </div>
+      </div>
+      <div class="hero-bottom">
+        <div class="hero-copy reveal">
+          <p>Provider of durable, secure containers designed for efficient transport and storage worldwide. We specialize in custom solutions to meet diverse shipping needs.</p>
+          <div class="hero-actions">
+            <button class="btn btn-white" data-quote>Get a quote <span class="arr" aria-hidden="true">→</span></button>
+            <a class="text-link light" href="#about" data-scroll>About us</a>
+          </div>
+        </div>
+        <!-- Live shipment card -->
+        <aside class="ship-card reveal" aria-label="Shipments in transit now">
+          <p class="ship-head"><span class="pulse-dot" aria-hidden="true"></span> In transit now <span class="ship-count" id="shipCount">1 / 3</span></p>
+          <div class="ship-slides" id="shipSlides">
+            <article class="ship-slide is-active">
+              <p class="ship-route">Shanghai <span aria-hidden="true">→</span> Rotterdam</p>
+              <p class="ship-meta">NX-482193 · Sea freight · ETA 8 Nov</p>
+            </article>
+            <article class="ship-slide">
+              <p class="ship-route">Frankfurt <span aria-hidden="true">→</span> Chicago</p>
+              <p class="ship-meta">NX-917204 · Air cargo · Lands 14:38</p>
+            </article>
+            <article class="ship-slide">
+              <p class="ship-route">Hamburg <span aria-hidden="true">→</span> Munich</p>
+              <p class="ship-meta">NX-305517 · Road freight · ETA 12 Nov</p>
+            </article>
+          </div>
+          <div class="ship-progress" aria-hidden="true"><span id="shipProgress"></span></div>
+          <p class="ship-note">Live from the Nexora network. <button class="ship-track-link" data-track-ref="NX-482193-RT">Follow the first one</button></p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section dark about" id="about" data-header="dark" data-spy-section="about">
+    <div class="wrap">
+      <p class="eyebrow reveal">About us</p>
+      <h2 class="reveal">Founded on a <em>passion</em> for efficiency<br class="br-d"> and customer satisfaction</h2>
+      <div class="about-grid">
+        <figure class="wipe reveal-img">
+          <img src="img/about-ship.webp" alt="A container ship at port seen from above" loading="lazy">
+        </figure>
+        <div class="about-copy reveal">
+          <p>Our business began with a simple mission: to move commerce forward by delivering excellence one package at a time. From humble beginnings, we've grown by focusing on reliability and innovation in every delivery we make.</p>
+          <button class="btn btn-white" data-quote data-service="Sea freight">About us <span class="arr" aria-hidden="true">→</span></button>
+          <ul class="about-points">
+            <li><strong data-count="450">0</strong><span>business partners trust the network</span></li>
+            <li><strong><span data-count="38">0</span> ports</strong><span>served across six continents</span></li>
+            <li><strong><span data-count="120">0</span>k+</strong><span>containers moved every year</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="section dark services" id="services" data-header="dark" data-spy-section="services">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow reveal">Logistics solutions</p>
+          <h2 class="reveal">Integrated logistics built<br class="br-d"> around your business</h2>
+        </div>
+        <div class="section-side reveal">
+          <p>From domestic freight to international shipping, we provide integrated logistics services tailored to businesses of every size.</p>
+          <button class="btn btn-blue" data-quote>Get a quote</button>
+        </div>
+      </div>
+
+      <div class="svc-shell reveal">
+        <div class="svc-card" id="svcCard">
+          <div class="svc-top">
+            <span class="svc-index" id="svcIndex">[ 01 ]</span>
+            <span class="svc-chips" id="svcChips"></span>
+          </div>
+          <h3 id="svcTitle">Warehouse sorting</h3>
+          <p class="svc-body" id="svcBody"></p>
+          <div class="svc-features" id="svcFeatures"></div>
+          <div class="svc-foot">
+            <button class="btn btn-blue" id="svcQuote" data-quote>Get a quote</button>
+            <div class="svc-nav">
+              <span class="svc-count" id="svcCount">01 / 04</span>
+              <button class="sq-btn" id="svcPrev" aria-label="Previous service">←</button>
+              <button class="sq-btn" id="svcNext" aria-label="Next service">→</button>
+            </div>
+          </div>
+        </div>
+        <figure class="svc-media wipe reveal-img">
+          <img id="svcImg" src="img/svc-warehouse.webp" alt="Nexora trailers reversed into warehouse loading docks, seen from above" loading="lazy">
+        </figure>
+      </div>
+      <div class="svc-dots" id="svcDots" role="tablist" aria-label="Services"></div>
+    </div>
+  </section>
+
+  <!-- ============ FLEET ============ -->
+  <section class="section light fleet" id="fleet" data-header="light" data-spy-section="fleet">
+    <div class="wrap">
+      <p class="eyebrow reveal">Your strategic partner</p>
+      <h2 class="reveal">Transport solutions built<br class="br-d"> to go <em>further</em></h2>
+      <div class="fleet-top reveal">
+        <p>Integrated logistics solutions designed to move every shipment efficiently across local and global supply chains.</p>
+        <div class="hero-actions">
+          <button class="btn btn-dark" data-quote data-service="Road freight">Get a quote <span class="arr" aria-hidden="true">→</span></button>
+          <a class="text-link dark" href="#about" data-scroll>About us</a>
+        </div>
+      </div>
+    </div>
+    <div class="truck-stage">
+      <img class="truck" id="truckImg" src="img/truck-cutout.png" alt="A white Nexora truck hauling a blue Nexora container" loading="lazy">
+    </div>
+    <div class="wrap">
+      <div class="stat-row">
+        <button class="stat-card pale reveal" data-stat="clients">
+          <span class="stat-num">1K<sup>+</sup></span>
+          <span class="stat-label">Worldwide clients</span>
+          <span class="stat-more">See the breakdown →</span>
+        </button>
+        <button class="stat-card black reveal" data-stat="years">
+          <span class="stat-num">12<sup>+</sup></span>
+          <span class="stat-label">Years of experience</span>
+          <span class="stat-more">See the breakdown →</span>
+        </button>
+        <button class="stat-card blue reveal" data-stat="repeat">
+          <span class="stat-num">95<sup>%</sup></span>
+          <span class="stat-label">Repeat client rate</span>
+          <span class="stat-more">See the breakdown →</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHY NEXORA ============ -->
+  <section class="section light why" id="why" data-header="light">
+    <div class="wrap why-grid">
+      <div class="why-left">
+        <p class="eyebrow reveal">Why Nexora</p>
+        <h2 class="reveal">Built on trust.<br>Driven by <em>performance</em>.</h2>
+        <p class="why-intro reveal">Every shipment is managed with precision, transparency and operational excellence to deliver dependable logistics without unnecessary complexity.</p>
+        <div class="why-features" id="whyFeatures">
+          <button class="why-row is-active" data-why="0">
+            <span class="why-num">[ 01 ]</span>
+            <span class="why-text"><strong>Real-time visibility</strong><small>Track every shipment with live updates, complete transparency and accurate delivery progress.</small></span>
+          </button>
+          <button class="why-row" data-why="1">
+            <span class="why-num">[ 02 ]</span>
+            <span class="why-text"><strong>Reliable delivery</strong><small>Consistent performance with dependable timelines and carefully managed transportation operations.</small></span>
+          </button>
+          <button class="why-row" data-why="2">
+            <span class="why-num">[ 03 ]</span>
+            <span class="why-text"><strong>Flexible solutions</strong><small>Logistics solutions shaped around your business, adapting as your supply needs change.</small></span>
+          </button>
+        </div>
+      </div>
+      <figure class="why-panel reveal">
+        <div class="why-slides" id="whySlides">
+          <img src="img/why-motorway.webp" alt="A motorway from above with a blue Nexora truck" class="is-active" loading="lazy">
+          <img src="img/why-yard.webp" alt="Rows of parked trucks in a Nexora yard, seen from above" loading="lazy">
+          <img src="img/why-port.webp" alt="A container port with cranes over stacks of containers" loading="lazy">
+        </div>
+        <figcaption class="why-stats">
+          <span><strong>98%</strong><small>On-time delivery rate</small></span>
+          <span><strong>24/7</strong><small>Real-time tracking</small></span>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ TRACKING ============ -->
+  <section class="section dark tracking" id="tracking" data-header="dark">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow reveal">Track shipment</p>
+          <h2 class="reveal">Every container,<br class="br-d"> followed to the <em>door</em></h2>
+        </div>
+        <p class="section-side reveal">One reference shows where your goods are, what happens next and when they arrive. Enter yours, or follow the sample below.</p>
+      </div>
+
+      <form class="track-form reveal" id="trackForm" novalidate>
+        <label for="trackInput">Tracking reference</label>
+        <div class="track-row">
+          <input id="trackInput" type="text" value="NX-482193-RT" autocomplete="off" spellcheck="false" placeholder="e.g. NX-482193-RT">
+          <button class="btn btn-blue" type="submit">Track <span class="arr" aria-hidden="true">→</span></button>
+        </div>
+        <button class="sample-link" type="button" id="sampleLink">Sample shipment, for illustration</button>
+        <p class="track-error" id="trackError" hidden></p>
+      </form>
+
+      <div class="track-result reveal" id="trackResult" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- ============ INDUSTRIES ============ -->
+  <section class="section dark industries" id="industries" data-header="dark" data-spy-section="industries">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow reveal">Industries we serve</p>
+          <h2 class="reveal">Logistics solutions designed<br class="br-d"> for every <em>industry</em></h2>
+        </div>
+        <div class="section-side reveal">
+          <p>Supporting diverse industries with reliable logistics, efficient transportation and supply chain expertise.</p>
+          <div class="car-nav">
+            <button class="sq-btn" id="carPrev" aria-label="Previous industries">←</button>
+            <button class="sq-btn" id="carNext" aria-label="Next industries">→</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel" id="carousel" tabindex="0" aria-label="Industries carousel, use arrow keys or drag">
+      <div class="car-track" id="carTrack"></div>
+    </div>
+    <div class="wrap">
+      <div class="car-progress" aria-hidden="true"><span id="carProgress"></span></div>
+    </div>
+  </section>
+
+  <!-- ============ QUOTE / CLOSING ============ -->
+  <section class="section dark quote-sec" id="quote" data-header="dark">
+    <div class="wrap quote-grid">
+      <div>
+        <p class="eyebrow reveal">Get a quote</p>
+        <h2 class="reveal">Tell us what is <em>moving</em>.<br>We will price the route.</h2>
+        <p class="quote-copy reveal">One form, every mode. A coordinator replies within one working day with a route, a timeline and a fixed price. No obligation, no call centre.</p>
+        <ul class="quote-points reveal">
+          <li>Sea, air and road freight in one plan</li>
+          <li>Customs paperwork handled for you</li>
+          <li>Live tracking from booking to the door</li>
+        </ul>
+      </div>
+      <form class="quote-form reveal" id="quoteForm" novalidate>
+        <div class="qf-row">
+          <label>Your name
+            <input type="text" name="name" id="qfName" placeholder="Full name" autocomplete="name">
+          </label>
+          <label>Work email
+            <input type="email" name="email" id="qfEmail" placeholder="you@company.com" autocomplete="email">
+          </label>
+        </div>
+        <div class="qf-row">
+          <label>Service
+            <select name="service" id="qfService">
+              <option>Sea freight</option>
+              <option>Air cargo</option>
+              <option>Road freight</option>
+              <option>Warehouse sorting</option>
+              <option>Full supply chain</option>
+            </select>
+          </label>
+          <label>Industry
+            <select name="industry" id="qfIndustry">
+              <option value="">Select an industry</option>
+              <option>Manufacturing</option>
+              <option>Technology</option>
+              <option>Automotive</option>
+              <option>Healthcare</option>
+              <option>Another industry</option>
+            </select>
+          </label>
+        </div>
+        <div class="qf-row">
+          <label>From
+            <input type="text" name="from" id="qfFrom" placeholder="City or port">
+          </label>
+          <label>To
+            <input type="text" name="to" id="qfTo" placeholder="City or port">
+          </label>
+        </div>
+        <label>What are you shipping?
+          <textarea name="cargo" id="qfCargo" rows="3" placeholder="Goods, weight or volume, and when it needs to move"></textarea>
+        </label>
+        <p class="qf-error" id="qfError" hidden></p>
+        <button class="btn btn-blue qf-submit" type="submit">Request my quote <span class="arr" aria-hidden="true">→</span></button>
+        <div class="qf-success" id="qfSuccess" hidden>
+          <p class="qf-success-title">Request received.</p>
+          <p id="qfSuccessText"></p>
+          <button class="text-link light" type="button" id="qfAgain">Send another request</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer" data-header="dark">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a class="logo" href="#top" data-scroll aria-label="Nexora, back to top">
+        <span class="logo-mark" aria-hidden="true"><i></i><i></i></span>
+        <span class="logo-word">NEXORA</span>
+      </a>
+      <p>Freight, warehousing and tracking for businesses of every size. Moving business forward, one delivery at a time.</p>
+      <p class="footer-note">Demo website built from a design study. Figures are the brand's own marketing numbers.</p>
+    </div>
+    <nav class="footer-col" aria-label="Explore">
+      <h3>Explore</h3>
+      <a href="#about" data-scroll>About us</a>
+      <a href="#services" data-scroll>Our services</a>
+      <a href="#fleet" data-scroll>Fleet</a>
+      <a href="#industries" data-scroll>Industries</a>
+    </nav>
+    <nav class="footer-col" aria-label="Services">
+      <h3>Services</h3>
+      <button data-quote data-service="Sea freight">Sea freight</button>
+      <button data-quote data-service="Air cargo">Air cargo</button>
+      <button data-quote data-service="Road freight">Road freight</button>
+      <button data-quote data-service="Warehouse sorting">Warehouse sorting</button>
+    </nav>
+    <div class="footer-col">
+      <h3>Track and quote</h3>
+      <a href="#tracking" data-scroll>Track a shipment</a>
+      <button data-quote>Request a quote</button>
+      <button data-track-ref="NX-482193-RT">Follow the sample shipment</button>
+    </div>
+  </div>
+  <div class="wrap footer-base">
+    <p>© 2026 Nexora Logistics. All rights reserved.</p>
+    <p>Sea · Air · Road · Warehousing · Tracking</p>
+  </div>
+</footer>
+
+<!-- Stat breakdown sheet -->
+<div class="sheet-backdrop" id="sheetBackdrop" hidden></div>
+<aside class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+  <button class="sheet-close" id="sheetClose" aria-label="Close details">✕</button>
+  <p class="sheet-code" id="sheetCode"></p>
+  <h3 id="sheetTitle"></h3>
+  <p class="sheet-intro" id="sheetIntro"></p>
+  <div class="sheet-rows" id="sheetRows"></div>
+  <p class="sheet-total" id="sheetTotal"></p>
+  <div class="sheet-actions" id="sheetActions"></div>
+</aside>
+
+<button class="to-top" id="toTop" aria-label="Back to top">↑</button>
+
+<script src="js/main.js"></script>
+</body>
+</html>
